@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MONITOREO DE LLUVIA CVC</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+
+
+<body>
+    <!-- INICIO DE SESION -->
+    <div class="contenedor" id="login">
+        <img src="../IMG/Logo.png" class="logo">
+        <h3>MONITOREO DE LLUVIA Y PRECIPITACION EN CALI</h3>
+        <input type="text" id="usuario" placeholder="Usuario">
+        <input type="password" id="contraseña" placeholder="Contraseña">
+        <button onclick="ingresar()">ENTRAR</button>
+        <p id="mensaje"></p>
+    </div>
+
+    <!-- PANEL DE REGISTRO -->
+    <div class="oculto" id="panelLluvia">
+        <div class="barra">
+            <p>CVC · MONITOREO DE LLUVIAS EN CALI</p>
+            <p>Sesión: CVC</p>
+            <button onclick="volverLogin()">CERRAR SESION</button>
+        </div>
+
+        <div class="fila">
+            <div class="contenedor ancho">
+                <h3>REGISTRO DE LA ZONA</h3>
+                <input type="text" id="direccion" placeholder="Dirección de la zona">
+
+                <div class="horarios">
+                    <div>
+                        <label for="horaInicio">Hora de inicio</label>
+                        <input type="time" id="horaInicio">
+                    </div>
+                    <div>
+                        <label for="horaFin">Hora de fin</label>
+                        <input type="time" id="horaFin">
+                    </div>
+                </div>
+
+                <input type="number" id="precipitacion" placeholder="Lluvia registrada (mm)" step="0.1" min="0">
+                <input type="text" id="nombre" placeholder="Nombre de quien registra">
+
+                <h4>FOTO DE LA ZONA</h4>
+                <video id="video" autoplay></video>
+                <canvas id="canvasFoto" class="oculto"></canvas>
+                <p id="mensajeFoto"></p>
+                <button onclick="tomarFoto()">TOMAR FOTO</button>
+                <input type="file" id="archivoFoto" accept="image/*" onchange="cargarFoto()">
+                <img id="foto" alt="Foto de la zona">
+
+                <button id="btnCalcular" onclick="calcularRegistro()">CALCULAR Y GUARDAR</button>
+                <button onclick="nuevoRegistro()">REGISTRAR OTRA ZONA</button>
+            </div>
+
+            <div class="contenedor ancho">
+                <h3>RESULTADOS</h3>
+                <p class="dato">Registrado por: <p id="resNombre">--</p></p>
+                <p class="dato">Duración de la lluvia: <p id="resDuracion">--</p> min</p>
+                <p class="dato">Lluvia registrada: <p id="resLluvia">--</p> mm</p>
+                <p class="dato">Estándar de Cali: <p id="resEstandar">--</p> mm</p>
+                <p class="dato">Ajuste por nubosidad (3 a 6 p. m.): <p id="resAjuste">--</p> %</p>
+                <p class="dato">Foto de la zona: <p id="resFoto">--</p></p>
+
+                <div id="reloj"></div>
+                <p class="formula">precipitación x estándar x tiempo total</p>
+
+                <p>Resultado comparado con el estándar:</p>
+                <div id="resultado">--</div>
+                <p id="comparacion"></p>
+            </div>
+        </div>
+
+        <div class="contenedor grafica">
+            <h3>GRAFICA DE BARRAS POR ZONA</h3>
+            <canvas id="grafica"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="../JS/codigo.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f4f4;
+    text-align: center;
+    margin: 0;
+}
+
+.contenedor{
+    background: white;
+    width: 350px;
+    max-width: 85%;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.Logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+input{
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+}
+
+button{
+    padding: 10px 20px;
+    margin: 8px 0;
+    background: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover{
+    background: #005fa3;
+}
+
+button:disabled{
+    background: #999;
+    cursor: not-allowed;
+}
+
+.oculto{
+    display: none;
+}
+
+.barra{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 25px;
+    background: #005fa3;
+    color: white;
+    font-weight: bold;
+}
+
+.barra button{
+    margin: 0;
+    background: white;
+    color: #005fa3;
+}
+
+.fila{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 25px;
+}
+
+.ancho{
+    width: 380px;
+}
+
+.horarios{
+    display: flex;
+    gap: 10px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.horarios div{
+    flex: 1;
+}
+
+.horarios input{
+    width: 100%;
+    box-sizing: border-box;
+}
+
+label{
+    display: block;
+    text-align: left;
+    font-size: 13px;
+    color: #555;
+}
+
+.dato{
+    text-align: left;
+    margin: 10px 0;
+}
+.dato, .dato + p{
+    display: inline;
+}
+
+#video, #foto{
+    display: block;
+    width: 90%;
+    margin: 8px auto;
+    border-radius: 6px;
+    background: #eee;
+}
+
+#foto:not([src]){
+    display: none;
+}
+
+#video{
+    min-height: 120px;
+}
+
+#mensajeFoto{
+    font-size: 13px;
+    color: #cc0000;
+}
+
+#reloj{
+    margin-top: 20px;
+    padding: 10px;
+    background: #f4f4f4;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.formula{
+    font-size: 13px;
+    color: #555;
+}
+
+#resultado{
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+#comparacion{
+    font-weight: bold;
+}
+
+.grafica{
+    width: 860px;
+    max-width: 85%;
+}
